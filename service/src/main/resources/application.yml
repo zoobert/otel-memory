@@ -1,0 +1,44 @@
+---
+server:
+  port: 8002
+spring:
+  application:
+    name: geography-service
+  flyway:
+    enabled: true
+    user: postgres
+    password: password
+    url: jdbc:postgresql://127.0.0.1:5432/postgres
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/postgres?currentSchema=ts_content
+    username: postgres
+    password: password
+  r2dbc:
+    username: postgres
+    password: password
+    url: r2dbc:postgresql://localhost:5432/postgres
+    pool:
+      enabled: true
+      initial-size: 8
+      max-size: 32
+    properties:
+      schema: ts_content
+      applicationName: geography-service-r2dbc
+      stringtype: unspecified
+  main:
+    allow-bean-definition-overriding: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://foobar.com/auth/realms/somewhere
+          jwk-set-uri: https://foobar.com/auth/realms/somewhere/protocol/openid-connect/certs
+logging:
+  level:
+    root: info
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics

@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="GeographyImporterKt" type="JetRunConfigurationType" nameIsGenerated="true">
+    <envs>
+      <env name="TS_KEYCLOAK_CLIENT_ID" value="idta-service" />
+      <env name="TS_KEYCLOAK_CLIENT_SECRET" value="050ec166-60e6-427b-a51c-5fb8111e9339" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="com.example.GeographyImporterKt" />
+    <module name="otel-memoryleak.client.main" />
+    <shortenClasspath name="NONE" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

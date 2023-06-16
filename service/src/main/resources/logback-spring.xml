@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/pulse.log}"/>
+    <springProfile name="aws">
+        <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+                <includeCallerData>true</includeCallerData>
+                <fieldNames>
+                    <version>[ignore]</version>
+                    <callerClass>class_name</callerClass>
+                    <callerMethod>method_name</callerMethod>
+                    <callerFile>[ignore]</callerFile>
+                    <callerLine>line_num</callerLine>
+                </fieldNames>
+                <throwableConverter class="net.logstash.logback.stacktrace.ShortenedThrowableConverter">
+                    <maxDepthPerThrowable>30</maxDepthPerThrowable>
+                    <maxLength>2048</maxLength>
+                    <exclude>sun\.reflect\..*\.invoke.*</exclude>
+                    <exclude>net\.sf\.cglib\.proxy\.MethodProxy\.invoke</exclude>
+                    <exclude>kotlin\.coroutines\.jvm\.internal.*</exclude>
+                </throwableConverter>
+                <includeMdcKeyName>tenantId</includeMdcKeyName>
+                <includeMdcKeyName>username</includeMdcKeyName>
+                <includeMdcKeyName>outputType</includeMdcKeyName>
+                <includeMdcKeyName>requestId</includeMdcKeyName>
+                <includeMdcKeyName>taxEngineType</includeMdcKeyName>
+                <includeMdcKeyName>testRunId</includeMdcKeyName>
+                <includeMdcKeyName>transactionGroupId</includeMdcKeyName>
+                <includeMdcKeyName>taxEngineUrl</includeMdcKeyName>
+                <includeMdcKeyName>trace_id</includeMdcKeyName>
+                <includeMdcKeyName>span_id</includeMdcKeyName>
+                <includeMdcKeyName>dd.trace_id</includeMdcKeyName>
+                <includeMdcKeyName>dd.span_id</includeMdcKeyName>
+            </encoder>
+        </appender>
+    </springProfile>
+    <springProfile name="!aws">
+        <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+    </springProfile>
+    <root level="${logging.level.ROOT:info}">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>

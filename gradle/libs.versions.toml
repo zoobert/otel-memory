@@ -1,0 +1,44 @@
+[versions]
+apache-poi-libs = "5.2.2"
+jetbrains-kotlin-libs = "1.8.20"
+koin-libs = "3.4.0"
+ktor-libs = "2.2.4"
+micrometer-trace-libs = "1.1.1"
+otel-libs = "1.26.0"
+r2jdbc-libs = "1.0.1.RELEASE"
+springboot-libs = "3.1.0"
+
+[libraries]
+apache-poi-core = { module = "org.apache.poi:poi", version.ref  = "apache-poi-libs" }
+apache-poi-ooxml = { module = "org.apache.poi:poi-ooxml", version.ref  = "apache-poi-libs" }
+flyway-core = { module = "org.flywaydb:flyway-core", version = "9.16.3" }
+jetbrains-kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "jetbrains-kotlin-libs" }
+jetbrains-kotlin-stdlib-jdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "jetbrains-kotlin-libs" }
+jetbrains-kotlinx-coroutines-reactor = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-reactor" }
+jetbrains-kotlinx-datetime-core = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version = "0.4.0" }
+jetbrains-kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version  = "1.5.0" }
+koin-core = { module = "io.insert-koin:koin-core", version.ref  = "koin-libs" }
+koin-ktor = { module = "io.insert-koin:koin-ktor", version.ref  = "koin-libs" }
+ktor-client-auth-core = { module = "io.ktor:ktor-client-auth", version.ref = "ktor-libs" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor-libs" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor-libs" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor-libs" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor-libs" }
+micrometer-tracing-bridge-otel = { module = "io.micrometer:micrometer-tracing-bridge-otel", version.ref="micrometer-trace-libs" }
+opentelemetry-exporter-otlp = { module = "io.opentelemetry:opentelemetry-exporter-otlp", version.ref = "otel-libs" }
+postgresql-r2dbc-postgresql = { module = "org.postgresql:r2dbc-postgresql", version.ref  = "r2jdbc-libs" }
+r2dbc-r2dbc-pool = { module = "io.r2dbc:r2dbc-pool" }
+r2dbc-r2dbc-proxy = { module = "io.r2dbc:r2dbc-proxy", version = "1.1.0.RELEASE" }
+springboot-bom = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "springboot-libs" }
+springboot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator" }
+springboot-starter-data-r2dbc = { module = "org.springframework.boot:spring-boot-starter-data-r2dbc" }
+springboot-starter-oauth2-resource-server = { module = "org.springframework.boot:spring-boot-starter-oauth2-resource-server", version.ref = "springboot-libs" }
+springboot-starter-security = { module = "org.springframework.boot:spring-boot-starter-security", version.ref = "springboot-libs" }
+springboot-starter-webflux = { module = "org.springframework.boot:spring-boot-starter-webflux", version.ref = "springboot-libs" }
+springframework-experimental-micrometer-r2dbc = { module = "org.springframework.experimental:r2dbc-micrometer-spring-boot", version = "1.0.2" }
+
+[plugins]
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrains-kotlin-libs" }
+jetbrains-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "jetbrains-kotlin-libs" }
+jetbrains-kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "jetbrains-kotlin-libs" }
+springframework-springboot = { id = "org.springframework.boot", version.ref = "springboot-libs" }

@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Content Service" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="Local">
+    <option name="ACTIVE_PROFILES" value="local" />
+    <module name="otel-memoryleak.service.main" />
+    <selectedOptions>
+      <option name="environmentVariables" />
+    </selectedOptions>
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.TaxContentServiceApp" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
