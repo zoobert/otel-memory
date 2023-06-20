@@ -6,7 +6,7 @@ ktor-libs = "2.2.4"
 micrometer-trace-libs = "1.1.1"
 otel-libs = "1.26.0"
 r2jdbc-libs = "1.0.1.RELEASE"
-springboot-libs = "3.1.0"
+springboot-libs = "3.1.1-SNAPSHOT"
 
 [libraries]
 apache-poi-core = { module = "org.apache.poi:poi", version.ref  = "apache-poi-libs" }
@@ -36,6 +36,7 @@ springboot-starter-oauth2-resource-server = { module = "org.springframework.boot
 springboot-starter-security = { module = "org.springframework.boot:spring-boot-starter-security", version.ref = "springboot-libs" }
 springboot-starter-webflux = { module = "org.springframework.boot:spring-boot-starter-webflux", version.ref = "springboot-libs" }
 springframework-experimental-micrometer-r2dbc = { module = "org.springframework.experimental:r2dbc-micrometer-spring-boot", version = "1.0.2" }
+context-propagation = { module = "io.micrometer:context-propagation", version = "1.0.3" }
 
 [plugins]
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrains-kotlin-libs" }

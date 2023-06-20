@@ -15,14 +15,14 @@ allprojects {
     }
 
     tasks.withType<JavaCompile> {
-        sourceCompatibility = JavaVersion.VERSION_19.toString()
-        targetCompatibility = JavaVersion.VERSION_19.toString()
+        sourceCompatibility = JavaVersion.VERSION_17.toString()
+        targetCompatibility = JavaVersion.VERSION_17.toString()
     }
 
     tasks.withType<KotlinCompile> {
         kotlinOptions {
             freeCompilerArgs = listOf("-Xjsr305=strict", "-opt-in=kotlin.RequiresOptIn")
-            jvmTarget = JavaVersion.VERSION_19.toString()
+            jvmTarget = JavaVersion.VERSION_17.toString()
         }
     }
 }

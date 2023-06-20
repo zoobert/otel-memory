@@ -16,10 +16,12 @@ dependencies {
 
     implementation(libs.springboot.starter.actuator)
     implementation(libs.springboot.starter.data.r2dbc)
-    implementation(libs.springboot.starter.security)
-    implementation(libs.springboot.starter.oauth2.resource.server)
+    //implementation(libs.springboot.starter.security)
+    //implementation(libs.springboot.starter.oauth2.resource.server)
     implementation(libs.springboot.starter.webflux)
     implementation(libs.springframework.experimental.micrometer.r2dbc)
+
+    implementation(libs.context.propagation)
 
     implementation(libs.jetbrains.kotlin.reflect)
     implementation(libs.jetbrains.kotlin.stdlib.jdk8)
